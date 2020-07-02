@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "393115428757",
+    "firebase_url": "https://finaluri-3be81.firebaseio.com",
+    "project_id": "finaluri-3be81",
+    "storage_bucket": "finaluri-3be81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:393115428757:android:13a9a077e985afa3e7789c",
+        "android_client_info": {
+          "package_name": "com.example.tsotne_shalva_final"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "393115428757-lbcptahlaglcds9t3i0bhdd841v6se6l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoqiirg5wHW6gAwyovSAW0roJeQ8EFsfA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "393115428757-lbcptahlaglcds9t3i0bhdd841v6se6l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

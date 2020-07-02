@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.shualeduri.DataLoader
 import com.example.shualeduri.WeathersModel
 import com.google.firebase.auth.FirebaseAuth
@@ -15,7 +16,7 @@ class WeatherActivity : AppCompatActivity() {
     val apiKey = "faf85372fe7d106d1743a6cf6f67fcd8"
 
     private lateinit var adapter: WeathersRecyclerViewAdapter
-    private var weathers = ArrayList<WeathersModel.Main>()
+    private var weathers = ArrayList<WeathersModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +44,7 @@ class WeatherActivity : AppCompatActivity() {
                 Log.d("asd", result)
                 try {
                     val model = Gson().fromJson(result, WeathersModel::class.java)
-                    weathers.addAll(model.main)
+                    weathers.addAll(listOf(model))
                     adapter.notifyDataSetChanged()
                 }catch (e: Exception){}
             }

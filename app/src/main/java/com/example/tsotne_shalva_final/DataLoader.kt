@@ -28,12 +28,10 @@ object DataLoader {
     }
     private fun callback(customCallback: CustomCallback) = object : Callback<String> {
         override fun onFailure(call: Call<String>, t: Throwable) {
-            Log.d("getRequestt", "${t.message}")
             customCallback.onFailure(t.message.toString())
         }
 
         override fun onResponse(call: Call<String>, response: Response<String>) {
-            Log.d("getRequest", "${response.body().toString()}")
             customCallback.onSuccess(response.body().toString())
         }
     }

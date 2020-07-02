@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.Log.d
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.shualeduri.DataLoader
 import com.example.shualeduri.WeathersModel
@@ -40,13 +41,16 @@ class WeatherActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
 
         DataLoader.getRequest("Tbilisi", apiKey, object :CustomCallback{
+
             override fun onSuccess(result: String) {
-                Log.d("asd", result)
                 try {
                     val model = Gson().fromJson(result, WeathersModel::class.java)
                     weathers.addAll(listOf(model))
                     adapter.notifyDataSetChanged()
                 }catch (e: Exception){}
+            }
+            override fun onFailure(errMessage: String) {
+                super.onFailure(errMessage)
             }
         })
     }

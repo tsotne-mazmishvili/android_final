@@ -1,25 +1,30 @@
 package com.example.shualeduri
 
+import java.util.*
+import kotlin.collections.ArrayList
+
 class WeathersModel() {
-    val name = ""
-    lateinit var weather:MutableList<Weather>
-    lateinit var main:MutableList<Main>
-    lateinit var wind:MutableList<Wind>
+    var name = ""
+    lateinit var weather:ArrayList<Weather>
+    lateinit var main: Main
+    lateinit var wind: Wind
 
     class Weather{
-        val id = 0
-        val main = ""
-        val description = ""
-        val icon = ""
+        var id = 0
+        var main = ""
+        var description = ""
+        var icon = ""
     }
 
     class Main{
-        val temp:Double = 0.0
-        val pressure:Double = 0.0
-        val humidity:Double = 0.0
+        var temp:Double = 0.0
+        var pressure:Double = 0.0
+        var humidity:Double = 0.0
     }
 
     class Wind{
-        val speed = ""
+        var speed:Double =  0.0
+        var deg:Double = 0.0
     }
+
 }

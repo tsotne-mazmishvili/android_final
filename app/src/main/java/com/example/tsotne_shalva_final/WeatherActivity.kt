@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.util.Log.d
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.shualeduri.DataLoader
 import com.example.shualeduri.WeathersModel
 import com.google.firebase.auth.FirebaseAuth
@@ -59,3 +60,4 @@ class WeatherActivity : AppCompatActivity() {
         })
     }
 }
+

@@ -42,7 +42,7 @@ class WeathersRecyclerViewAdapter(
             itemView.humidityTextView.setText("Humidity: "+modelmain.humidity)
             itemView.cityTextView.setText(model.name)
             itemView.weatherTextView.setText("Sky: "+modelweather[0].main)
-            itemView.windTextView.setText("Wind Speed: "+modelwind.speed)
+            itemView.windTextView.setText("Wind Speed: "+modelwind.speed+" Km/h")
 
             if(modelweather[0].main.equals("Rain")){
                 d("weather","Rainy Sky")

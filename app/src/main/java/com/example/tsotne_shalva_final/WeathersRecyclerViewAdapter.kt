@@ -27,12 +27,31 @@ class WeathersRecyclerViewAdapter(
     }
     inner class ViewHolder(weatherView: View):RecyclerView.ViewHolder(weatherView){
         private lateinit var model: WeathersModel
-        private lateinit var model2: WeathersModel.Main
-
+        private lateinit var modelmain: WeathersModel.Main
+        private lateinit var modelweather: ArrayList<WeathersModel.Weather>
+        private lateinit var modelwind: WeathersModel.Wind
+        @SuppressLint("SetTextI18n")
         fun onBind(){
             model = weathers[adapterPosition]
-            model2 = weathers[adapterPosition].main
-            itemView.temperatureTextView.setText(model2.temp.toString())
+            modelmain = weathers[adapterPosition].main
+            modelweather = weathers[adapterPosition].weather
+            modelwind = weathers[adapterPosition].wind
+            d("weather",modelweather[0].main)
+            var modelweather1:String = modelweather[0].toString()
+            itemView.temperatureTextView.setText("Temperature: "+modelmain.temp.toString()+" C")
+            itemView.humidityTextView.setText("Humidity: "+modelmain.humidity)
+            itemView.cityTextView.setText(model.name)
+            itemView.weatherTextView.setText("Sky: "+modelweather[0].main)
+            itemView.windTextView.setText("Wind Speed: "+modelwind.speed)
+
+            if(modelweather[0].main.equals("Rain")){
+                d("weather","Rainy Sky")
+                itemView.mainLinearLayout.setBackgroundResource(R.drawable.rainy_background)
+            }
+            if(modelweather[0].main.equals("Clouds")){
+                d("weather","Cloudy Sky")
+                itemView.mainLinearLayout.setBackgroundResource(R.drawable.cloudy_background)
+            }
         }
 
     }

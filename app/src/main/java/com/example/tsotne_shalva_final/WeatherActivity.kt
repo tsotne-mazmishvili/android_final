@@ -15,6 +15,7 @@ import java.lang.Exception
 
 class WeatherActivity : AppCompatActivity() {
     val apiKey = "faf85372fe7d106d1743a6cf6f67fcd8"
+    val unitMetric = "metric"
 
     private lateinit var adapter: WeathersRecyclerViewAdapter
     private var weathers = ArrayList<WeathersModel>()
@@ -40,7 +41,7 @@ class WeatherActivity : AppCompatActivity() {
         adapter = WeathersRecyclerViewAdapter(weathers, this)
         recyclerView.adapter = adapter
 
-        DataLoader.getRequest("Tbilisi", apiKey, object :CustomCallback{
+        DataLoader.getRequest("Tbilisi", apiKey, unitMetric,  object :CustomCallback{
 
             override fun onSuccess(result: String) {
                 try {

@@ -22,7 +22,6 @@ class WeathersRecyclerViewAdapter(
     }
 
     override fun getItemCount() = weathers.size
-
     override fun onBindViewHolder(holder: WeathersRecyclerViewAdapter.ViewHolder, position: Int) {
         holder.onBind()
     }

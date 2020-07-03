@@ -17,15 +17,12 @@ object DataLoader {
 
     var service = retrofit.create(ApiRetrofit::class.java)
 
-    fun getRequest(city: String, apiKey: String, customCallback: CustomCallback){
-        val call = service.getRequest(city, apiKey)
+    fun getRequest(city: String, apiKey: String, unitMetric: String, customCallback: CustomCallback){
+        val call = service.getRequest(city, apiKey, unitMetric)
 
         call.enqueue(callback(customCallback))
     }
-    fun postRequest(path: String, parameters:MutableMap<String, String>, customCallback: CustomCallback){
-        val call = service.postRequest(path, parameters)
-        call.enqueue(callback(customCallback))
-    }
+
     private fun callback(customCallback: CustomCallback) = object : Callback<String> {
         override fun onFailure(call: Call<String>, t: Throwable) {
             customCallback.onFailure(t.message.toString())
@@ -40,9 +37,5 @@ object DataLoader {
 
 interface ApiRetrofit{
     @GET("data/2.5/weather")
-    fun getRequest(@Query("q")city: String, @Query("appid")apiKey: String ): Call<String>
-
-    @FormUrlEncoded
-    @POST("{path}")
-    fun postRequest(@Path("path")path: String, parameters:Map<String, String>): Call<String>
+    fun getRequest(@Query("q")city: String, @Query("appid")apiKey: String,  @Query("units")unitMetric: String ): Call<String>
 }

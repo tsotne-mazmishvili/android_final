@@ -24,7 +24,10 @@ class WeatherActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_weather)
         logOut()
-        getWeather()
+        getWeather("Tbilisi")
+        addCityButton.setOnClickListener{
+            getWeather(cityEditText.text.toString())
+        }
     }
 
     fun logOut(){
@@ -36,12 +39,12 @@ class WeatherActivity : AppCompatActivity() {
         }
     }
 
-    private fun getWeather(){
+    private fun getWeather(city:String){
         recyclerView.layoutManager = LinearLayoutManager(this)
         adapter = WeathersRecyclerViewAdapter(weathers, this)
         recyclerView.adapter = adapter
 
-        DataLoader.getRequest("Tbilisi", apiKey, unitMetric,  object :CustomCallback{
+        DataLoader.getRequest(city, apiKey, unitMetric,  object :CustomCallback{
 
             override fun onSuccess(result: String) {
                 try {

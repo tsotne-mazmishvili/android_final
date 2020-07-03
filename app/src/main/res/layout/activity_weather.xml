@@ -7,6 +7,16 @@
     tools:context=".WeatherActivity"
     android:orientation="vertical">
 
+    <EditText
+        android:id="@+id/cityEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="City"/>
+    <Button
+        android:id="@+id/addCityButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Add City"/>
 
     <Button
         android:hint="Log out"

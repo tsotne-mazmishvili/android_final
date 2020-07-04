@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="30dp"
-            android:text="Register"
+            android:text="@string/register"
             android:textColor="@android:color/white"
             android:textSize="25dp" />
 
@@ -26,7 +26,7 @@
             android:id="@+id/registerUserNameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="@string/email"
             android:background="#1F6865"
             android:textAlignment="center"
             android:textColorHint="@android:color/white" />
@@ -35,12 +35,13 @@
             android:id="@+id/registerPasswordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/password"
             android:background="#1F6865"
             android:inputType="textPassword"
             android:textAlignment="center"
             android:textColor="#6bfff7"
-            android:textColorHint="@android:color/white"/>
+            android:textColorHint="@android:color/white"
+            android:layout_marginTop="5sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#072B2E"
-                android:text="Register"
+                android:text="@string/register"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"/>
         </LinearLayout>
@@ -71,7 +72,7 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:background="#072B2E"
-                android:text="I already have an account"
+                android:text="@string/i_already_have_an_account"
                 android:textAllCaps="false"
                 tools:ignore="MissingConstraints"
                 android:textColor="@android:color/white"/>

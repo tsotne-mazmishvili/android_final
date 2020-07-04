@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="30dp"
-            android:text="Login"
+            android:text="@string/login"
             android:textColor="@android:color/white"
             android:textSize="25sp" />
 
@@ -26,7 +26,7 @@
             android:id="@+id/userNameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="@string/email"
             android:textAlignment="center"
             android:background="#1F6865"
             android:textColorHint="@android:color/white" />
@@ -35,12 +35,13 @@
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:background="#1F6865"
             android:textAlignment="center"
             android:textColor="#6bfff7"
-            android:textColorHint="@android:color/white" />
+            android:textColorHint="@android:color/white"
+            android:layout_marginTop="5sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#072B2E"
-                android:text="Login"
+                android:text="@string/login"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"/>
         </LinearLayout>
@@ -71,7 +72,7 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:background="#072B2E"
-                android:text="Create an account"
+                android:text="@string/create_an_account"
                 android:textAllCaps="false"
                 tools:ignore="MissingConstraints"
                 android:textColor="@android:color/white"/>

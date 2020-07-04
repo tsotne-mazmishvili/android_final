@@ -50,8 +50,10 @@ class WeatherActivity : AppCompatActivity() {
             override fun onSuccess(result: String) {
                 try {
                     val model = Gson().fromJson(result, WeathersModel::class.java)
-                    weathers.addAll(listOf(model))
-                    adapter.notifyDataSetChanged()
+                    if (result != "null"){
+                        weathers.addAll(listOf(model))
+                        adapter.notifyDataSetChanged()
+                    }
                 }catch (e: Exception){}
             }
             override fun onFailure(errMessage: String) {

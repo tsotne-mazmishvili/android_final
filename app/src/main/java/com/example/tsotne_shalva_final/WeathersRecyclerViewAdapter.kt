@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shualeduri.WeathersModel
 import kotlinx.android.synthetic.main.weather_recyclerview_layout.view.*
+import java.lang.Exception
 
 class WeathersRecyclerViewAdapter(
     private val weathers: ArrayList<WeathersModel>,
@@ -23,7 +24,10 @@ class WeathersRecyclerViewAdapter(
 
     override fun getItemCount() = weathers.size
     override fun onBindViewHolder(holder: WeathersRecyclerViewAdapter.ViewHolder, position: Int) {
-        holder.onBind()
+        try{holder.onBind()}catch (e: Exception){
+
+        }
+
     }
     inner class ViewHolder(weatherView: View):RecyclerView.ViewHolder(weatherView){
         private lateinit var model: WeathersModel
